@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>WebRCON console</title>
+
+    <!--    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>-->
+    <!--    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/JavaScript" src="reserveBalance.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .lime {color: #00FF00}
+        .red {color: #FF0000}
+        .orange {color: #ffb500
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="container-fluid content" style="padding-top: 15px; width: 450px">
+    <h3>Reserve server count balancer</h3>
+    <form>
+        <div class="form-group">
+            <label for="playersCount">Players count: <span id="selectedPlayersCount">0</span></label>
+            <input type="range" min="0" max="1000" value="0" id="playersCount" name="playersCount" class="ranger">
+        </div>
+        <div class="form-group">
+            <label for="serverCount">Server count: <span id="selectedServerCount">1</span> </label>
+            <input type="range" min="1" max="100" value="1" id="serverCount" name="serverCount" class="ranger">
+            <input type="button" value="-" id="removeServer">
+            <input type="button" value="+" id="addServer">
+        </div>
+        <div class="form-group">
+            <label for="oneServerCapacity">One server capacity: </label><br>
+            <input type="number" value="50" id="oneServerCapacity" name="oneServerCapacity">
+        </div>
+    <hr>
+        <h3>Balancing settings</h3>
+        <div class="form-group">
+            <label for="createNewServerMoreOrEqeul">Minimal reserve: </label><br>
+            <input type="number" value="40" id="createNewServerMoreOrEqeul" name="createNewServerMoreOrEqeul">
+        </div>
+        <div class="form-group">
+            <label for="destroyServerLess">Maximal reserve: </label><br>
+            <input type="number" value="100" id="destroyServerLess" name="destroyServerLess">
+        </div>
+    <hr>
+        <div class="form-group">
+            <label for="totalCapacity">Total capacity: </label> <span id="totalCapacity">0</span> players<br>
+            <label for="percentageUsage">Percentage usage: </label> <span id="percentageUsage">0</span>%<br>
+            <label for="reserve">Reserve: </label> <strong><span id="reserve">0</span></strong><br>
+            <label for="serverUsage">Server usage: </label> <span id="serverUsage">0/0 (wasted: 0)</span><br>
+            <strong>Action:</strong> <span id="action">Nothing</span>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
